@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">GaniaFoodTestRL</string>
+    <string name="app_name">FoodTest RL</string>
+    <string name="attribution"><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></string>
+    <string name="btn_next">Selanjutnya</string>
+    <string name="btn_skip">Lewati</string>
+
+    <array name="array_dot_inactive">
+        <item>@color/colorGray</item>
+        <item>@color/colorGray</item>
+        <item>@color/colorGray</item>
+    </array>
 </resources>
