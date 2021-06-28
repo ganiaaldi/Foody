@@ -6,14 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+<androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/tvRekomendasi"
+    style="@style/WhiteDarkText"
+    android:layout_margin="10dp"
+    android:text="Rekomendasi"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/attribution"
-        android:textColorLink="@color/colorBlue"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/rvRekomendasi"
+        app:layout_constraintTop_toBottomOf="@id/tvRekomendasi"
+        tools:listitem="@layout/item_rekomendasi"
+        tools:itemCount="2"
+        android:orientation="horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rvRekomendasi"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/tvList"
+        style="@style/WhiteDarkText"
+        android:layout_margin="10dp"
+        android:text="List Makanan"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvMakanan"
+        app:layout_constraintTop_toBottomOf="@id/tvList"
+        tools:listitem="@layout/item_rekomendasi"
+        android:orientation="horizontal"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
