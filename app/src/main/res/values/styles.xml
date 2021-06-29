@@ -11,6 +11,8 @@
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="Splash" parent="Theme.AppCompat.NoActionBar">
@@ -25,7 +27,7 @@
 
     <style name="WhiteBoldTextSmall" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/opensans_regular</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
@@ -37,7 +39,7 @@
 
     <style name="WhiteDarkTextSmall" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/opensans_regular</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorDark</item>
     </style>
 

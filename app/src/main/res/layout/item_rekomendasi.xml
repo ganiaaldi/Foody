@@ -16,18 +16,18 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageViewVacation"
+            android:id="@+id/imageViewFood"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_food"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvNameVacation"
+            android:id="@+id/tvNameFood"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@color/colorDark"
-            android:alpha="0.5"
+            android:alpha="0.7"
             style="@style/WhiteBoldText"
             android:layout_gravity="bottom"
             android:layout_alignParentBottom="true"
