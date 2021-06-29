@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var prefManager: PrefManager
     lateinit var viewModel: MainViewModel
-//    private val adapter = FoodAdapter()
     private val list = ArrayList<Food>()
 
     @SuppressLint("WrongConstant")
@@ -45,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         binding.rvRekomendasi.setHasFixedSize(true)
         binding.rvRekomendasi.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
         val adapter = RekomendasiFoodAdapter(list)
+        adapter.setOnItemClickCallback(object : RekomendasiFoodAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: Food) {
+                showSelectedFood(data)
+            }
+        })
         binding.rvRekomendasi.adapter = adapter
         //rv list
         binding.rvMakanan.setHasFixedSize(true)
@@ -63,7 +66,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.foodList.observe(this, {
             adapter.setFoods(it)
             adapterr.setFoods(it)
-            Log.d("iniloh","${it}")
         })
 
         viewModel.errorMessage.observe(this, {
@@ -81,11 +83,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedFood(data: Food) {
-        Toast.makeText(this,"${data.image}",Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra(DetailActivity.DETAIL_FOOD, data)
         startActivity(intent)
-        Log.d("Capcay","${DetailActivity.DETAIL_FOOD}")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -18,6 +18,10 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getData()
+        this.supportActionBar!!.hide()
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun getData() {

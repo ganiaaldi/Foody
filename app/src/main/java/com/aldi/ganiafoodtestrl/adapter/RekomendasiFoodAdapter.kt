@@ -21,12 +21,13 @@ class RekomendasiFoodAdapter(private var listFood: ArrayList<Food>) : RecyclerVi
 
     fun setFoods(foods: List<Food>) {
         this.listFood = foods.toMutableList() as ArrayList<Food>
+        listFood.shuffle()
        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val binding = ItemRekomendasiBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
-        listFood.shuffle()
+//        listFood.shuffle()
         return ListViewHolder(binding)
     }
 
